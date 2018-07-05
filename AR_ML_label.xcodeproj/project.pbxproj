@@ -15,6 +15,7 @@
 		7DB156C920EE19F000367ABF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB156C720EE19F000367ABF /* LaunchScreen.storyboard */; };
 		7DB156D420EE19F000367ABF /* AR_ML_labelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB156D320EE19F000367ABF /* AR_ML_labelTests.swift */; };
 		7DB156DF20EE19F000367ABF /* AR_ML_labelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB156DE20EE19F000367ABF /* AR_ML_labelUITests.swift */; };
+		7DB156ED20EE1B1000367ABF /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7DB156EC20EE1B1000367ABF /* Resnet50.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		7DB156DA20EE19F000367ABF /* AR_ML_labelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AR_ML_labelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB156DE20EE19F000367ABF /* AR_ML_labelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR_ML_labelUITests.swift; sourceTree = "<group>"; };
 		7DB156E020EE19F000367ABF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DB156EC20EE1B1000367ABF /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Resnet50.mlmodel; path = ../../../../../Downloads/Resnet50.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				7DB156BE20EE19EF00367ABF /* art.scnassets */,
 				7DB156C020EE19EF00367ABF /* ViewController.swift */,
 				7DB156C220EE19EF00367ABF /* Main.storyboard */,
+				7DB156EC20EE1B1000367ABF /* Resnet50.mlmodel */,
 				7DB156C520EE19F000367ABF /* Assets.xcassets */,
 				7DB156C720EE19F000367ABF /* LaunchScreen.storyboard */,
 				7DB156CA20EE19F000367ABF /* Info.plist */,
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DB156C120EE19EF00367ABF /* ViewController.swift in Sources */,
+				7DB156ED20EE1B1000367ABF /* Resnet50.mlmodel in Sources */,
 				7DB156BD20EE19EF00367ABF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 237J8UY6UT;
 				INFOPLIST_FILE = AR_ML_label/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +460,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 237J8UY6UT;
 				INFOPLIST_FILE = AR_ML_label/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
