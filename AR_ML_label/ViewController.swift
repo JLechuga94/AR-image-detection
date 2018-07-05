@@ -70,7 +70,19 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sphere.firstMaterial?.diffuse.contents = UIColor.orange
         let sphereNode = SCNNode(geometry: sphere)
         
+        let textGeometry = SCNText(string: text, extrusionDepth: 0)
+//        textGeometry.alignmentMode = kCAAlignmentCenter
+        textGeometry.firstMaterial?.diffuse.contents = UIColor.orange
+        textGeometry.firstMaterial?.specular.contents = UIColor.white
+        textGeometry.firstMaterial?.isDoubleSided = true
+        textGeometry.font = UIFont(name: "Futura", size: 0.15)
+        
+        let textNode = SCNNode(geometry: textGeometry)
+        textNode.scale = SCNVector3(0.2,0.2,0.2)
+        
         parentNode.addChildNode(sphereNode)
+        parentNode.addChildNode(textNode)
+
         return parentNode
     }
     
@@ -85,7 +97,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             
             let observation = observations.first as! VNClassificationObservation
             
-            print("Name \(observation.identifier) and confidences is \(observation.confidence)")
+            print("Detected: \(observation.identifier) with confidences is \(observation.confidence*100)")
             
             DispatchQueue.main.async {
                 self.displayPredictions(text: observation.identifier)
