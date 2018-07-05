@@ -57,6 +57,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         performVisionRequest(pixelBuffer: pixelBuffer)
     }
     
+    func displayPredictions(text: String){
+        let node = createText(text: text)
+        node.position = SCNVector3(self.hitTestResult.worldTransform.columns.3.x, self.hitTestResult.worldTransform.columns.3.y, self.hitTestResult.worldTransform.columns.3.z)
+        
+        self.sceneView.scene.rootNode.addChildNode(node)
+    }
+    
+    func createText(text: String) -> SCNNode{
+        let parentNode = SCNNode()
+        let sphere = SCNSphere(radius: 0.01)
+        sphere.firstMaterial?.diffuse.contents = UIColor.orange
+        let sphereNode = SCNNode(geometry: sphere)
+        
+        parentNode.addChildNode(sphereNode)
+        return parentNode
+    }
+    
     func performVisionRequest(pixelBuffer: CVPixelBuffer){
         let visionModel = try! VNCoreMLModel(for: self.resnetModel.model)
         
@@ -69,6 +86,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             let observation = observations.first as! VNClassificationObservation
             
             print("Name \(observation.identifier) and confidences is \(observation.confidence)")
+            
+            DispatchQueue.main.async {
+                self.displayPredictions(text: observation.identifier)
+            }
         }
         
         request.imageCropAndScaleOption = .centerCrop
