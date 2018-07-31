@@ -98,9 +98,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             let observation = observations.first as! VNClassificationObservation
             
             print("Detected: \(observation.identifier) with confidences is \(observation.confidence*100)")
-            
+             let text = "\(observation.identifier)  \(observation.confidence*100)"
             DispatchQueue.main.async {
-                self.displayPredictions(text: observation.identifier)
+                self.displayPredictions(text: text)
             }
         }
         
